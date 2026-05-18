@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: um-core
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  datasource:
+    url: ${UM_DATASOURCE_URL:jdbc:mysql://localhost:3306/um_core?useUnicode=true&characterEncoding=utf8mb4&serverTimezone=UTC}
+    username: ${UM_DATASOURCE_USERNAME:root}
+    password: ${UM_DATASOURCE_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: ${UM_REDIS_HOST:localhost}
+      port: ${UM_REDIS_PORT:6379}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+um:
+  auth:
+    jwt-secret: ${UM_JWT_SECRET:dev-only-change-in-production-32chars!!}
+    access-token-ttl: PT2H
+    refresh-token-ttl: P30D
+    max-login-attempts: 5
+    lock-duration: PT30M
+    geo-login-alert-enabled: false
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs

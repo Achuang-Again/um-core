@@ -3,5 +3,13 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-bootstrap/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-profile/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/um-vip/src/main/java" charset="UTF-8" />
   </component>
 </project>

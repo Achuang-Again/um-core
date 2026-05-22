@@ -44,9 +44,15 @@ um-bootstrap → um-api（传递引入全部业务模块）
 ## 6. 打包与运行
 
 ```bash
-mvn clean package -pl um-bootstrap -am
+# 开发启动（先编译依赖模块）
+mvn spring-boot:run -pl um-bootstrap -am
+
+# 或打包后运行
+mvn clean package -pl um-bootstrap -am -DskipTests
 java -jar um-bootstrap/target/um-bootstrap-1.0.0-SNAPSHOT.jar
 ```
+
+> 父工程 `um-core` 为 `packaging=pom`，已在父 POM 对 `spring-boot-maven-plugin` 设置 `skip=true`，避免 `spring-boot:run` 在聚合模块上报错「找不到 main class」。
 
 ## 7. 健康检查
 

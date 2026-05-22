@@ -104,6 +104,16 @@
     </dependencyManagement>
 
     <build>
+        <plugins>
+            <!-- 父工程 packaging=pom，禁止 spring-boot:run/repackage 在聚合模块执行 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -111,6 +121,13 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
                         <release>${java.version}</release>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
                     </configuration>
                 </plugin>
             </plugins>

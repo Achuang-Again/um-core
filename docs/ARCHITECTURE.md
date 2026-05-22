@@ -23,7 +23,7 @@ UM-Core 是**通用用户管理微服务**，职责边界如下：
 | 安全 | Spring Security | 6.x |
 | ORM | MyBatis-Plus | 3.5.x |
 | 数据库 | MySQL | 8.0+ |
-| 缓存 | Redis | 6.x+ |
+| 缓存 | Redis | 7.x+ |
 | 迁移 | Flyway | 9.x+ |
 | API 文档 | springdoc-openapi | 3.x |
 | 测试 | JUnit 5、Mockito、Testcontainers | — |
